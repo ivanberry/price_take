@@ -10,7 +10,11 @@ window.addEventListener("message", (event) => {
       console.log('error')
     } else {
       chrome.runtime.onConnect.addListener(port => {
-        port.postMessage('xxxxx')
+        port.postMessage({type: event.data.type, text: event.data.text})
+      })
+
+      chrome.runtime.sendMessage('xxx', (res) => {
+        console.log('xxxx: ', res)
       })
     }
   }
