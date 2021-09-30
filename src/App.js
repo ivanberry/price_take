@@ -3,7 +3,7 @@ import "./App.css";
 function App() {
   const test = () => {
     // @ts-ignore
-    chrome.runtime.sendMessage('123', (response) => {
+    chrome.runtime.sendMessage('bkabehjfcepfcmiahcppfnjfeflfheml', (response) => {
       console.log('send message: ', response)
     })
   }
