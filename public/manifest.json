@@ -7,7 +7,7 @@
 
   },
   "background": {
-    "service_worker": "./index.js"
+    "service_worker": "./runtime.js"
   },
   "content_scripts": [
     {
@@ -15,5 +15,8 @@
       "js": ["./js/content.js"]
     }
   ],
-  "permissions": ["tabs", "storage"]
+  "permissions": ["tabs", "storage"],
+  "externally_connectable": {
+  "matches": ["https://price-assiastant.vercel.app/"]
+}
 }

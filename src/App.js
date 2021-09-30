@@ -2,11 +2,13 @@ import "./App.css";
 
 function App() {
   const test = () => {
-    window.postMessage({ type: "USER_STORAGE", text: "Hello from the webpage!" }, "*");
+    chrome.runtime.sendMessage('123', (response) => {
+      console.log('send message: ', response)
+    })
   }
   return (
     <div className="App">
-      <button onClick={test}></button>
+      <button onClick={test}>通讯测试</button>
     </div>
   );
 }
